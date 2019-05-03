@@ -39,23 +39,39 @@ public class Calc {
 	}
 
 	public void Calculate() {
+
+		/**
+		 * Если выбран тип жилья "квартира", то расчет производится по следующей формуле
+		 * в соответствии с тарифами
+		 */
 		if (switchKey == 1) {
 			sumcoldwater = v_cold_water * TARIF_COLD_WATER;
 			sumhotwater = v_hot_water * TARIF_HOT_WATER;
 			sumgas = v_gas * TARIF_GAS;
 			sumsvet = v_svet * TARIF_SVET;
 			itog = area * normativ + sumcoldwater + sumhotwater + sumgas + sumsvet + dolg - pereplata;
+			/**
+			 * Округляем результат расчета до сотых (до копеек)
+			 */
 			sumcoldwater = Math.rint(100.0 * sumcoldwater) / 100.0;
 			sumhotwater = Math.rint(100.0 * sumhotwater) / 100.0;
 			sumgas = Math.rint(100.0 * sumgas) / 100.0;
 			sumsvet = Math.rint(100.0 * sumsvet) / 100.0;
 			itog = Math.rint(100.0 * itog) / 100.0;
-		} else if (switchKey == 2) {
+		}
+		/**
+		 * Если выбран тип жилья "частный дом", то расчет производится по следующей
+		 * формуле в соответствии с тарифами
+		 */
+		else if (switchKey == 2) {
 			sumcoldwater = v_cold_water * TARIF_COLD_WATER;
 			sumhotwater = v_hot_water * TARIF_HOT_WATER;
 			sumgas = v_gas * TARIF_GAS;
 			sumsvet = v_svet * TARIF_SVET;
 			itog = sumcoldwater + sumhotwater + sumgas + sumsvet + dolg - pereplata;
+			/**
+			 * Округляем результат расчета до сотых (до копеек)
+			 */
 			sumcoldwater = Math.rint(100.0 * sumcoldwater) / 100.0;
 			sumhotwater = Math.rint(100.0 * sumhotwater) / 100.0;
 			sumgas = Math.rint(100.0 * sumgas) / 100.0;
