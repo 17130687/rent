@@ -39,7 +39,7 @@
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.6.0</version>
 				<configuration>
-			   <mainClass>com.group.rent.Authorization_Panel</mainClass>
+			   <mainClass>com.group.rent.Authorization_Panel.Start</mainClass>
 					</configuration>
 			</plugin>
 		</plugins>
